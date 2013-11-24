@@ -1,0 +1,12 @@
+name: Blogs
+markdown: redcarpet
+pygments: true
+permalink: pretty
+author: Nisheed KM
+author_email: nisheed_km@yahoo.com
+github: nisheed
+twitter: nisheed
+comments :
+  provider : disqus
+  disqus :
+    short_name : nisheedcom
