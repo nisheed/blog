@@ -1,4 +1,5 @@
 name: Blogs
+baseurl: /blog 
 markdown: redcarpet
 pygments: true
 permalink: pretty
