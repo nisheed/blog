@@ -67,6 +67,7 @@ a:visited { color: #a0a; }
 
 .header {
   border-bottom: 4px solid #eee;
+  margin-bottom: 20px;
 }
 
 .header a {
