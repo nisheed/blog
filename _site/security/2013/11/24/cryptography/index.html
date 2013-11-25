@@ -76,57 +76,59 @@
 <p>Checking the SSL ciphers</p>
 
 <p>You can check the ciphers supported by an SSL site using the openssl tool.</p>
-
-<div class="highlight"><pre><code class="ruby"><span class="n">exponent</span><span class="err">@</span><span class="o">~</span> <span class="o">&gt;</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">connect</span> <span class="n">yahoo</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span>
-<span class="o">---</span>
-<span class="no">SSL</span> <span class="n">handshake</span> <span class="n">has</span> <span class="n">read</span> <span class="mi">1399</span> <span class="n">bytes</span> <span class="ow">and</span> <span class="n">written</span> <span class="mi">456</span> <span class="n">bytes</span>
-<span class="o">---</span>
-<span class="no">New</span><span class="p">,</span> <span class="no">TLSv1</span><span class="o">/</span><span class="no">SSLv3</span><span class="p">,</span> <span class="no">Cipher</span> <span class="n">is</span> <span class="no">AES256</span><span class="o">-</span><span class="no">SHA</span>
-<span class="no">Server</span> <span class="kp">public</span> <span class="n">key</span> <span class="n">is</span> <span class="mi">2048</span> <span class="n">bit</span>
-<span class="no">Secure</span> <span class="no">Renegotiation</span> <span class="no">IS</span> <span class="n">supported</span>
-<span class="ss">Compression</span><span class="p">:</span> <span class="no">NONE</span>
-<span class="ss">Expansion</span><span class="p">:</span> <span class="no">NONE</span>
-<span class="no">SSL</span><span class="o">-</span><span class="ss">Session</span><span class="p">:</span>
-    <span class="no">Protocol</span>  <span class="p">:</span> <span class="no">TLSv1</span>
-    <span class="no">Cipher</span>    <span class="p">:</span> <span class="no">AES256</span><span class="o">-</span><span class="no">SHA</span>
-    <span class="no">Session</span><span class="o">-</span><span class="ss">ID</span><span class="p">:</span>
-    <span class="no">Session</span><span class="o">-</span><span class="no">ID</span><span class="o">-</span><span class="ss">ctx</span><span class="p">:</span>
-    <span class="no">Master</span><span class="o">-</span><span class="ss">Key</span><span class="p">:</span> <span class="no">CAB7722C5ED37D00ACB35E983337CD4BF4C0B466642</span> <span class="p">\</span>
-                <span class="no">C2B933AF52991CA4A299DF7820DE8E27A005D51393602265831D8</span>
-    <span class="no">Key</span><span class="o">-</span><span class="no">Arg</span>   <span class="p">:</span> <span class="no">None</span>
-    <span class="no">Start</span> <span class="ss">Time</span><span class="p">:</span> <span class="mi">1375166699</span>
-    <span class="no">Timeout</span>   <span class="p">:</span> <span class="mi">300</span> <span class="p">(</span><span class="n">sec</span><span class="p">)</span>
-    <span class="no">Verify</span> <span class="k">return</span> <span class="ss">code</span><span class="p">:</span> <span class="mi">21</span> <span class="p">(</span><span class="n">unable</span> <span class="n">to</span> <span class="n">verify</span> <span class="n">the</span> <span class="n">first</span> <span class="n">certificate</span><span class="p">)</span>
-<span class="o">---</span>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">exponent@~ &gt; openssl s_client -connect yahoo.com:443
+---
+SSL handshake has read 1399 bytes and written 456 bytes
+---
+New, TLSv1/SSLv3, Cipher is AES256-SHA
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : TLSv1
+    Cipher    : AES256-SHA
+    Session-ID:
+    Session-ID-ctx:
+    Master-Key: CAB7722C5ED37D00ACB35E983337CD4BF4C0B466642 \
+                C2B933AF52991CA4A299DF7820DE8E27A005D51393602265831D8
+    Key-Arg   : None
+    Start Time: 1375166699
+    Timeout   : 300 (sec)
+    Verify return code: 21 (unable to verify the first certificate)
+---
 </code></pre></div>
-
 <p>Look for phrase &quot;Cipher is&quot;. Below is a sample cipher supported and how to interpret it.</p>
 
-<p><em>TLS_ECDHE_RSA_WITH_AES256_CBC_SHA</em></p>
+<p><em>**TLS</em>ECDHE<em>RSA</em>WITH<em>AES256</em>CBC<em>SHA**</em></p>
 
-<p>TLS          : Transport Layer Security
-(It is the transport layer protocol used. other values can be SSLv3 etc.)
+<p><em>TLS</em> : Transport Layer Security </br>
+=&gt; It is the transport layer protocol used. </br>
 [other possible values: SSL]</p>
 
-<p>ECDHE     : Elliptic Curve Diffie Hellman Ephemeral
-(Session key exchange algorithm)
+<p><em>ECDHE</em> : Elliptic Curve Diffie Hellman Ephemeral </br>
+=&gt; Session key exchange algorithm </br>
 [other possible values: RSA, DH, DHE]</p>
 
-<p>RSA          : Rivest, Adleman and Shamir
-(PKI type of Certificate Type)
+<p><em>RSA</em> : Rivest, Adleman and Shamir </br>
+=&gt; PKI type of Certificate Type </br>
 [other possible values: DSS]</p>
 
-<p>AES256     : Advanced Encryption Standard 256 (bit key).
-(Algorithm used to encrypt the actual data)
+<p><em>AES256</em> : Advanced Encryption Standard 256 (bit key). </br>
+=&gt; Algorithm used to encrypt the actual data </br>
 [other possible values: RC4, 3DES, DES]</p>
 
-<p>CBC          : Cypher Block Chaining
-(Mode in which the cipher algorithm works. CBC is difficult to crack, but susceptible to BEAST/Luck13 attacks.)
+<p><em>CBC</em> : Cypher Block Chaining </br>
+=&gt; Mode in which the cipher algorithm works. CBC is difficult to crack, but susceptible to BEAST/Luck13 attacks.) </br>
 [other possible values: CBC3]</p>
 
-<p>SHA          : Secure Hash Algorithm
-(A hashing algorithm for data integrity)
+<p><em>SHA</em> : Secure Hash Algorithm</br>
+=&gt; A hashing algorithm for data integrity </br>
 [other possible values: MD5]</p>
+
+<hr>
+
+<hr>
 
 <div id="disqus_thread"></div>
 

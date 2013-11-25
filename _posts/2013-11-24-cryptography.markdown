@@ -58,7 +58,9 @@ Choose a browser and operating system that are open source. A browser that can t
 Checking the SSL ciphers
 
 You can check the ciphers supported by an SSL site using the openssl tool.
-{% highlight ruby %}
+
+
+```
 exponent@~ > openssl s_client -connect yahoo.com:443
 ---
 SSL handshake has read 1399 bytes and written 456 bytes
@@ -80,38 +82,39 @@ SSL-Session:
     Timeout   : 300 (sec)
     Verify return code: 21 (unable to verify the first certificate)
 ---
-{% endhighlight %}
+```
 
 
 Look for phrase "Cipher is". Below is a sample cipher supported and how to interpret it.
 
-*TLS\_ECDHE\_RSA\_WITH\_AES256\_CBC\_SHA*
+_**TLS_ECDHE_RSA_WITH_AES256_CBC_SHA**_
 
-TLS          : Transport Layer Security
-(It is the transport layer protocol used. other values can be SSLv3 etc.)
+*TLS* : Transport Layer Security </br>
+=> It is the transport layer protocol used. </br>
 [other possible values: SSL]
 
-ECDHE     : Elliptic Curve Diffie Hellman Ephemeral
-(Session key exchange algorithm)
+*ECDHE* : Elliptic Curve Diffie Hellman Ephemeral </br>
+=> Session key exchange algorithm </br>
 [other possible values: RSA, DH, DHE]
 
-RSA          : Rivest, Adleman and Shamir
-(PKI type of Certificate Type)
+*RSA* : Rivest, Adleman and Shamir </br>
+=> PKI type of Certificate Type </br>
 [other possible values: DSS]
 
-AES256     : Advanced Encryption Standard 256 (bit key).
-(Algorithm used to encrypt the actual data)
+*AES256* : Advanced Encryption Standard 256 (bit key). </br>
+=> Algorithm used to encrypt the actual data </br>
 [other possible values: RC4, 3DES, DES]
 
-CBC          : Cypher Block Chaining
-(Mode in which the cipher algorithm works. CBC is difficult to crack, but susceptible to BEAST/Luck13 attacks.)
+*CBC* : Cypher Block Chaining </br>
+=> Mode in which the cipher algorithm works. CBC is difficult to crack, but susceptible to BEAST/Luck13 attacks.) </br>
 [other possible values: CBC3]
 
-SHA          : Secure Hash Algorithm
-(A hashing algorithm for data integrity)
+*SHA* : Secure Hash Algorithm</br>
+=> A hashing algorithm for data integrity </br>
 [other possible values: MD5]
 
-
+***
+***
 
 
 <div id="disqus_thread"></div>
