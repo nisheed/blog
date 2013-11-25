@@ -111,7 +111,9 @@ _**TLS_ECDHE_RSA_WITH_AES256_CBC_SHA**_
 
 *SHA* : Secure Hash Algorithm</br>
 => A hashing algorithm for data integrity </br>
-[other possible values: MD5]
+[other possible values: MD5] </br>
+
+\-The End
 
 ***
 <br />
