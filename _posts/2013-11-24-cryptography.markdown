@@ -113,10 +113,9 @@ _**TLS_ECDHE_RSA_WITH_AES256_CBC_SHA**_
 => A hashing algorithm for data integrity </br>
 [other possible values: MD5] </br>
 
-\-The End
+_[The End]_
 
 ***
-<br />
 <br />
 
 <div id="disqus_thread"></div>
